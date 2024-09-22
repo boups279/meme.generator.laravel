@@ -8,7 +8,9 @@ return [
 
     // 'allowed_origins' => ['*'],  // Les origines autorisées. Remplacez '*' par les origines spécifiques si nécessaire, comme 'http://localhost:4200'.
 
-    'allowed_origins' => ['https://laravel.meme-generator.boups.tech'],
+    // 'allowed_origins' => ['https://laravel.meme-generator.boups.tech'],
+    
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],  // Les patterns d'origines autorisées (utilisez des expressions régulières si besoin).
 
