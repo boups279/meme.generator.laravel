@@ -2,7 +2,8 @@
 
 return [
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie', '/login'],  // Les routes qui doivent autoriser les requêtes CORS
+    'paths' => ['*'],  // Les routes qui doivent autoriser les requêtes CORS
+    // 'paths' => ['api/*', 'sanctum/csrf-cookie', '/login'],  // Les routes qui doivent autoriser les requêtes CORS
 
     'allowed_methods' => ['*'],  // Les méthodes HTTP autorisées (GET, POST, etc.)
 
