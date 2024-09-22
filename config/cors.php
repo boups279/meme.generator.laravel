@@ -2,7 +2,7 @@
 
 return [
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],  // Les routes qui doivent autoriser les requêtes CORS
+    'paths' => ['api/*', 'sanctum/csrf-cookie', '/login'],  // Les routes qui doivent autoriser les requêtes CORS
 
     'allowed_methods' => ['*'],  // Les méthodes HTTP autorisées (GET, POST, etc.)
 
@@ -17,6 +17,7 @@ return [
     'allowed_headers' => ['*'],  // Les en-têtes autorisés.
 
     // 'exposed_headers' => [],  // Les en-têtes exposés au navigateur.
+
     'allowed_headers' => ['Content-Type', 'X-Requested-With', 'Authorization'],
 
 
