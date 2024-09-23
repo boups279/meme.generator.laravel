@@ -19,9 +19,10 @@ class Cors
         $response = $next($request);
         
         // Autoriser l'origine spécifique
-        $response->headers->set('Access-Control-Allow-Origin', 'https://meme-generator.boups.tech');
+        $response->headers->set('Access-Control-Allow-Origin', '*'); // Remplace par l'URL spécifique si nécessaire
         $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-        $response->headers->set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+        $response->headers->set('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+        $response->headers->set('Access-Control-Allow-Credentials', 'true');
 
         // Si la requête est une requête OPTIONS, renvoyer une réponse vide avec un code 204
         if ($request->isMethod('OPTIONS')) {
