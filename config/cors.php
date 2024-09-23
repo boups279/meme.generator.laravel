@@ -15,21 +15,40 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    // 'paths' => ['api/*', 'storage/*', 'sanctum/csrf-cookie'],
 
-    'allowed_methods' => ['*'],
+    // 'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    // 'allowed_origins' => ['*'],
 
-    'allowed_origins_patterns' => [],
+    // 'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    // 'allowed_headers' => ['*'],
 
-    'exposed_headers' => [],
+    // 'exposed_headers' => [],
 
-    'max_age' => 0,
+    // 'max_age' => 0,
 
-    'supports_credentials' => true,
+    // 'supports_credentials' => true,
+
+
+        'paths' => ['api/*', 'storage/*'],  // Ajoute ici les chemins que tu veux rendre accessibles
+    
+        'allowed_methods' => ['*'],         // Autorise toutes les méthodes (GET, POST, etc.)
+    
+        'allowed_origins' => ['*'],         // Autorise toutes les origines
+    
+        'allowed_origins_patterns' => [],
+    
+        'allowed_headers' => ['*'],         // Autorise tous les en-têtes
+    
+        'exposed_headers' => [],
+    
+        'max_age' => 0,
+    
+        'supports_credentials' => false,
+    
+    
 
 ];
 

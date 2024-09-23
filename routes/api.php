@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CaptureController;
 use App\Http\Controllers\Api\MemesController;
 use App\Http\Controllers\sseController;
 use Illuminate\Http\Request;
@@ -45,12 +46,17 @@ Route::get('/getData', [sseController::class, 'index']);
 Route::get('/auth/les_memes', [MemesController::class, 'getMemes']);
 
 Route::post('/auth/memes', [MemesController::class, 'store']);
+// Route::post('/auth/save-capture', [CaptureController::class, 'store']);
 
+Route::middleware('auth:sanctum')->get('/captures', [CaptureController::class, 'index']);
 // // Recuperer les categories
 // Route::get('categories', [CategoriesController::class, 'get_categorie']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/auth/memes/user/{userId}', [MemesController::class, 'getMemesByUser']);
+    Route::post('/auth/save-capture', [CaptureController::class, 'saveCapture']);
+    Route::get('/auth/captures', [CaptureController::class, 'index']);
+
 
     // // Ajouter une livre
     // Route::post('books/create', [BooksController::class, 'ajouter_livre']);
