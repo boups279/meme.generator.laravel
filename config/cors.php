@@ -1,40 +1,47 @@
 <?php
 
-
 return [
-    'allowedHeaders'         => ['*'],
-    'allowedMethods'         => ['*'],
-    'allowedOrigins'         => ['*'],
-    'exposedHeaders'         => ['Authorization'],
-    'maxAge'                 => 0,
-    'supportsCredentials'    => false,
-    'paths' => ['*'],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Cross-Origin Resource Sharing (CORS) Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure your settings for cross-origin resource sharing
+    | or "CORS". This determines what cross-origin operations may execute
+    | in web browsers. You are free to adjust these settings as needed.
+    |
+    | To learn more: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+    |
+    */
+
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+
+    'allowed_methods' => ['*'],
+
+    'allowed_origins' => ['*'],
+
+    'allowed_origins_patterns' => [],
+
+    'allowed_headers' => ['*'],
+
+    'exposed_headers' => [],
+
+    'max_age' => 0,
+
+    'supports_credentials' => true,
+
 ];
 
+
 // return [
-
-//     'paths' => ['*'],  // Les routes qui doivent autoriser les requêtes CORS
-//     // 'paths' => ['api/*', 'sanctum/csrf-cookie', '/login'],  // Les routes qui doivent autoriser les requêtes CORS
-
-//     'allowed_methods' => ['*'],  // Les méthodes HTTP autorisées (GET, POST, etc.)
-
-//     // 'allowed_origins' => ['*'],  // Les origines autorisées. Remplacez '*' par les origines spécifiques si nécessaire, comme 'http://localhost:4200'.
-
-//     // 'allowed_origins' => ['https://laravel.meme-generator.boups.tech'],
-
-//     'allowed_origins' => ['*'],
-
-//     'allowed_origins_patterns' => [],  // Les patterns d'origines autorisées (utilisez des expressions régulières si besoin).
-
-//     'allowed_headers' => ['*'],  // Les en-têtes autorisés.
-
-//     // 'exposed_headers' => [],  // Les en-têtes exposés au navigateur.
-
-//     'allowed_headers' => ['Content-Type', 'X-Requested-With', 'Authorization'],
-
-
-//     'max_age' => 0,  // Le temps de mise en cache de la réponse préliminaire OPTIONS.
-
-//     'supports_credentials' => true,  // Si vous devez autoriser l'authentification (cookies, tokens, etc.).
-
+//     'paths' => ['*'], // Autorise tous les chemins ou spécifie les routes spécifiques
+//     'allowed_methods' => ['*'], // Autorise toutes les méthodes HTTP
+//     'allowed_origins' => ['http://localhost:3000', 'http://user-client'], // Remplace par tes URL autorisées
+//     'allowed_origins_patterns' => [],
+//     'allowed_headers' => ['*'], // Autorise tous les en-têtes
+//     'exposed_headers' => [],
+//     'max_age' => 0,
+//     'supports_credentials' => true, // Si tu utilises des cookies ou des sessions partagées
 // ];
+
